@@ -14,7 +14,8 @@ namespace ShopConsoleApp
 
         static void Main(string[] args)
         {
-         
+            //Main Menu
+
             Store s = new Store();
             Console.WriteLine("Welcome to Darik's Video Game Library and Storefront! First input the video game Console you're selling. Fill out the correct system type and sale cost. Then checkout! Also add an item to your wishlist or acess your current collection from pastebin");
 
@@ -51,6 +52,7 @@ namespace ShopConsoleApp
                         printInventory(s);
                         break;
 
+                        //this selection allows you add items to your cart. 
 
                     case 2:
 
@@ -65,17 +67,19 @@ namespace ShopConsoleApp
                         printShoppingCart(s);
 
                         break;
-
+                    //this selection allows you to get the final cost of your consoles/items for sale and checkout.
                     case 3:
 
                         printShoppingCart(s);
                         Console.WriteLine("The total cost of these systems is : " + s.Checkout());
                         break;
 
+                    //This prints out
                     case 4:
                         printBackOrder(s);
                         break;
 
+                    //This option allows you to add items to your wishlist. Saved in .bin file. 
                     case 5:
 
                         try
@@ -100,7 +104,7 @@ namespace ShopConsoleApp
                         Console.Read();
 
                         break;
-
+                    //This option current quiers the raw pasebin file I use for back currently owned Video Game List and prints it to the console. 
                     case 6:
                         
                         {
@@ -181,7 +185,7 @@ namespace ShopConsoleApp
         }
 
         
-
+        //this interacts with Store.cs 
         private static void printBackOrder(Store s)
         {
             string filePath = @"wishlist.csv";
@@ -217,13 +221,13 @@ namespace ShopConsoleApp
                 Console.WriteLine("Game # " + i + " " + s.GameList[i]);
             }
         }
-
+        //this is the interactive comman menu for the program. 
         static public int chooseAction()
         {
             int choice = 0;
-            Console.WriteLine("Enter (1) to add a System Brand. Enter (2) to add System Type. Enter (3) to checkout. Enter (4) to current game collection. Enter (5) to add game to file. Enter (6) to acess outside collection file. Enter (9) to quit ");
+            Console.WriteLine("Enter (1) to add a System Manufactuer. Enter (2) to add System Type. Enter (3) to checkout. Enter (4) to view wishlist. Enter (5) to add game to file. Enter (6) to acess outside collection file. Enter (9) to quit ");
 
-            //fix crash with a try/catch
+         
             choice = int.Parse(Console.ReadLine());
             return choice;
         }
