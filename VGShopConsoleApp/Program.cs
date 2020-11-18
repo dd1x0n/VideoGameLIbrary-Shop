@@ -114,10 +114,6 @@ namespace ShopConsoleApp
                         {
                             WebClient client = new WebClient();
                             string reply = client.DownloadString(address);
-                            
-                          
-                      
-
 
                             Console.WriteLine(reply);
 
@@ -131,45 +127,43 @@ namespace ShopConsoleApp
                         break;
 
 
-                        // case 7:
-                        //    //location of an error when trying to putput a radom line from a file. 
-                        //    try
-                        //    {
-                        //        StreamReader sr = new StreamReader("supernes.csv");
+                    case 7:
+                        //location of an error when trying to putput a radom line from a file. 
+                        try
+                        {
+                            WebClient client = new WebClient();
+                            string reply = client.DownloadString("https://pastebin.com/raw/Lzs7gJfc");
+                            
+                            String pwd = null;
 
-                        //        String pwd = null;
+                            string[] line = reply.Split("\r\n");
 
-                        //        string[] line = new string[10];
+                            
 
-                        //        for (int i = 0; i < 10; i++)
+                            Random rn = new Random();
 
-                        //        {
+                            int rnum = rn.Next(line.Length-1);
 
-                        //            line[i] = sr.ReadLine();
 
-                        //        }
+                            pwd = line[rnum].ToString();
 
-                        //        Random rn = new Random();
+                            Console.WriteLine(pwd);
 
-                        //        int rnum = rn.Next(10);
+                            
+                        }
+                        catch (Exception e)
+                        {
+                            Console.Write(e);
+                        }
 
-                        //        pwd = line[rnum].ToString();
+                        Console.Read();
+                        break;
 
-                        //        sr.Close();
-                        //    }
-                        //    catch (Exception e)
-                        //    {
-                        //        Console.Write(e);
-                        //    }
 
-                        //    Console.Read();
-                        //break;
 
-                       
-
-                        //public string[] lines = File.ReadAllLines(...); //i hope that the file is not too big
-                        //Random rand = new Random();
-                        //return lines[rand.Next(lines.Length)];
+                    //public string[] lines = File.ReadAllLines(...); //i hope that the file is not too big
+                    //Random rand = new Random();
+                    //return lines[rand.Next(lines.Length)];
 
 
 
@@ -225,7 +219,7 @@ namespace ShopConsoleApp
         static public int chooseAction()
         {
             int choice = 0;
-            Console.WriteLine("Enter (1) to add a System Manufactuer. Enter (2) to add System Type. Enter (3) to checkout. Enter (4) to view wishlist. Enter (5) to add game to file. Enter (6) to acess outside collection file. Enter (9) to quit ");
+            Console.WriteLine("Enter (1) to add a System Manufactuer. Enter (2) to add System Type. Enter (3) to checkout. Enter (4) to view wishlist. Enter (5) to add game to file. Enter (6) to access outside collection file. Enter (9) to quit ");
 
          
             choice = int.Parse(Console.ReadLine());
