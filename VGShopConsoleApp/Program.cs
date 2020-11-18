@@ -16,7 +16,7 @@ namespace ShopConsoleApp
         {
          
             Store s = new Store();
-            Console.WriteLine("Welcome to Darik's Video Game Library and (pseudo) Storefront! First input the video game Console you're selling. Fill out the correct system type and sale cost. Then checkout!");
+            Console.WriteLine("Welcome to Darik's Video Game Library and Storefront! First input the video game Console you're selling. Fill out the correct system type and sale cost. Then checkout! Also add an item to your wishlist or acess your current collection from pastebin");
 
             int action = chooseAction();
 
@@ -30,16 +30,16 @@ namespace ShopConsoleApp
                     //first option, allows you to add consoles, type and price. Unlimted amounts can be added! 
                     case 1:
 
-                        Console.WriteLine("You chose or add a new game");
+                        Console.WriteLine("You chose to purchase/sell a system");
 
                         String gameMake = "";
                         String gameModel = "";
                         Decimal gamePrice = 0;
 
-                        Console.WriteLine("What is the game make?");
+                        Console.WriteLine("Who is the console manufactuer (Sony, Nintendo, Etc.)?");
                         gameMake = Console.ReadLine();
 
-                        Console.WriteLine("What is the game model?");
+                        Console.WriteLine("What is the game system?");
                         gameModel = Console.ReadLine();
 
                         Console.WriteLine("What is the cost?");
@@ -84,7 +84,7 @@ namespace ShopConsoleApp
                             var input = Console.ReadLine();
                             Console.WriteLine("What game?");
                             var input2 = Console.ReadLine();
-                            TextWriter tw = new StreamWriter("supernes.csv", true);
+                            TextWriter tw = new StreamWriter("wishlist.csv", true);
                             tw.WriteLine(input + "," + input2);
                             tw.Close();
                             Console.WriteLine("Info saved");
@@ -184,7 +184,7 @@ namespace ShopConsoleApp
 
         private static void printBackOrder(Store s)
         {
-            string filePath = @"supernes.csv";
+            string filePath = @"wishlist.csv";
 
             List<string> lines = File.ReadAllLines(filePath).ToList();
 
@@ -197,7 +197,7 @@ namespace ShopConsoleApp
 
             File.WriteAllLines(filePath, lines);
 
-            Console.WriteLine("Would you like to add a videogame to the master list? ");
+            Console.WriteLine("Above is your current video game wishlist. ");
             Console.ReadLine();
         }
 
