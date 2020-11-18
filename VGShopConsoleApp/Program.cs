@@ -1,11 +1,11 @@
-﻿using ClassLibrary;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary;
 
 namespace ShopConsoleApp
 {
@@ -14,8 +14,7 @@ namespace ShopConsoleApp
 
         static void Main(string[] args)
         {
-          
-
+         
             Store s = new Store();
             Console.WriteLine("Welcome to Darik's Video Game Library and (pseudo) Storefront! First input the video game Console you're selling. Fill out the correct system type and sale cost. Then checkout!");
 
@@ -222,7 +221,7 @@ namespace ShopConsoleApp
         static public int chooseAction()
         {
             int choice = 0;
-            Console.WriteLine("Enter (1) to add a System Brand. Enter (2) to add System Type. Enter (3) to checkout. Enter (4) to current game collection. Enter (5) to add game to file. Enter (9) to quit ");
+            Console.WriteLine("Enter (1) to add a System Brand. Enter (2) to add System Type. Enter (3) to checkout. Enter (4) to current game collection. Enter (5) to add game to file. Enter (6) to acess outside collection file. Enter (9) to quit ");
 
             //fix crash with a try/catch
             choice = int.Parse(Console.ReadLine());
