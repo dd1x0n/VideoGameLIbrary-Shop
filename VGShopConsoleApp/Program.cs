@@ -3,16 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ShopConsoleApp
 {
     class Program
-    {
+    { 
 
         static void Main(string[] args)
         {
+          
+
             Store s = new Store();
             Console.WriteLine("Welcome to Darik's Video Game Library and (pseudo) Storefront! First input the video game Console you're selling. Fill out the correct system type and sale cost. Then checkout!");
 
@@ -55,7 +58,7 @@ namespace ShopConsoleApp
                         Console.WriteLine("You chose to add game to your shopping cart");
                         printInventory(s);
 
-                        Console.WriteLine("Which item would you like to buy? (amount)");
+                        Console.WriteLine("Which item would you like to buy? (amount )");
                         int gameChosen = int.Parse(Console.ReadLine());
 
                         s.ShoppingList.Add(s.GameList[gameChosen]);
@@ -99,6 +102,75 @@ namespace ShopConsoleApp
 
                         break;
 
+                    case 6:
+                        
+                        {
+                            DownloadString("https://pastebin.com/raw/Lzs7gJfc");
+                        }
+                         static void DownloadString(string address)
+                        {
+                            WebClient client = new WebClient();
+                            string reply = client.DownloadString(address);
+                            
+                          
+                      
+
+
+                            Console.WriteLine(reply);
+
+                            
+                           
+                            Console.WriteLine("Pretty Coool huh? Press enter to continue.");
+                            Console.ReadLine();
+
+                            
+                        }
+                        break;
+
+
+                        // case 7:
+                        //    //location of an error when trying to putput a radom line from a file. 
+                        //    try
+                        //    {
+                        //        StreamReader sr = new StreamReader("supernes.csv");
+
+                        //        String pwd = null;
+
+                        //        string[] line = new string[10];
+
+                        //        for (int i = 0; i < 10; i++)
+
+                        //        {
+
+                        //            line[i] = sr.ReadLine();
+
+                        //        }
+
+                        //        Random rn = new Random();
+
+                        //        int rnum = rn.Next(10);
+
+                        //        pwd = line[rnum].ToString();
+
+                        //        sr.Close();
+                        //    }
+                        //    catch (Exception e)
+                        //    {
+                        //        Console.Write(e);
+                        //    }
+
+                        //    Console.Read();
+                        //break;
+
+                       
+
+                        //public string[] lines = File.ReadAllLines(...); //i hope that the file is not too big
+                        //Random rand = new Random();
+                        //return lines[rand.Next(lines.Length)];
+
+
+
+
                     default:
 
                         break;
@@ -108,6 +180,8 @@ namespace ShopConsoleApp
             }
 
         }
+
+        
 
         private static void printBackOrder(Store s)
         {
