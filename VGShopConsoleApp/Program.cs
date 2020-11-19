@@ -11,7 +11,6 @@ namespace ShopConsoleApp
 {
     class Program
     { 
-
         static void Main(string[] args)
         {
             //Main Menu
@@ -21,7 +20,8 @@ namespace ShopConsoleApp
             Console.WriteLine("Welcome to Darik's Video Game Library and Storefront!");
             Console.WriteLine("First input the video game Console you're selling.");
             Console.WriteLine("Fill out the correct system type and sale cost. Then checkout!");
-            Console.WriteLine("Also add an item to your wishlist or acess your current collection from pastebin");
+            Console.WriteLine("Also yout can add an item to your wishlist or access your current collection from pastebin");
+            Console.WriteLine("You can even randomly be suggested a game to play from me collection");
             Console.WriteLine("*********************************************************************************");
             Console.WriteLine("Main Menu");
             Console.WriteLine("*********");
@@ -31,11 +31,11 @@ namespace ShopConsoleApp
             while (action != 9)
             {
                 Console.WriteLine("Function " + action + " recieved good job!");
-
                 switch (action)
 
                 {
-                    //first option, allows you to add consoles, type and price. Unlimted amounts can be added! 
+                    //first option, allows you to add consoles, type and price. Unlimted amounts can be added!
+
                     case 1:
 
                         Console.WriteLine("You chose to purchase/sell a system");
@@ -75,18 +75,21 @@ namespace ShopConsoleApp
 
                         break;
                     //this selection allows you to get the final cost of your consoles/items for sale and checkout.
+
                     case 3:
 
                         printShoppingCart(s);
                         Console.WriteLine("The total cost of these systems is : " + s.Checkout());
                         break;
 
-                    //This prints out
+                    //This prints it out
+
                     case 4:
                         printBackOrder(s);
                         break;
 
-                    //This option allows you to add items to your wishlist. Saved in .bin file. 
+                    //This option allows you to add items to your wishlist. Saved in .bin file.
+
                     case 5:
 
                         try
@@ -128,7 +131,8 @@ namespace ShopConsoleApp
                         }
                         break;
 
-                    //This randomly selects a game from an external source 
+                    //This randomly selects a game from an external source
+
                     case 7:
                         
                         try
