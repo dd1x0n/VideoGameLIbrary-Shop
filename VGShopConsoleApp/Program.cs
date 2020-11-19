@@ -117,18 +117,17 @@ namespace ShopConsoleApp
 
                             Console.WriteLine(reply);
 
-                            
-                           
-                            Console.WriteLine("Pretty Coool huh? Press enter to continue.");
+                            Console.WriteLine("Pretty Cool huh?");
+                            Console.WriteLine("Press enter to continue.");
                             Console.ReadLine();
 
                             
                         }
                         break;
 
-
+                    //This randomly selects a game from an external source 
                     case 7:
-                        //location of an error when trying to putput a radom line from a file. 
+                        
                         try
                         {
                             WebClient client = new WebClient();
@@ -138,17 +137,14 @@ namespace ShopConsoleApp
 
                             string[] line = reply.Split("\r\n");
 
-                            
-
                             Random rn = new Random();
 
                             int rnum = rn.Next(line.Length-1);
 
-
                             pwd = line[rnum].ToString();
 
                             Console.WriteLine(pwd);
-
+                            Console.WriteLine("Press Enter to contine");
                             
                         }
                         catch (Exception e)
@@ -158,15 +154,6 @@ namespace ShopConsoleApp
 
                         Console.Read();
                         break;
-
-
-
-                    //public string[] lines = File.ReadAllLines(...); //i hope that the file is not too big
-                    //Random rand = new Random();
-                    //return lines[rand.Next(lines.Length)];
-
-
-
 
                     default:
 
@@ -178,8 +165,8 @@ namespace ShopConsoleApp
 
         }
 
-        
-        //this interacts with Store.cs 
+        //this interacts with Store.cs
+
         private static void printBackOrder(Store s)
         {
             string filePath = @"wishlist.csv";
@@ -222,6 +209,7 @@ namespace ShopConsoleApp
             Console.WriteLine("Enter (1) to add a System Manufactuer. Enter (2) to add System Type. Enter (3) to checkout. Enter (4) to view wishlist. Enter (5) to add game to file. Enter (6) to access outside collection file. Enter (9) to quit ");
 
          
+
             choice = int.Parse(Console.ReadLine());
             return choice;
         }
