@@ -27,7 +27,7 @@ namespace ShopConsoleApp
             Console.WriteLine("*********");
 
             int action = chooseAction();
-
+            //beginning of the master loop requirement. 
             while (action != 9)
             {
                 Console.WriteLine("Function " + action + " recieved good job!");
@@ -89,6 +89,7 @@ namespace ShopConsoleApp
                         break;
 
                     //This option allows you to add items to your wishlist. Saved in .bin file.
+                    //User can add and read from a .csv file - one of the option requirements. 
 
                     case 5:
 
@@ -102,6 +103,7 @@ namespace ShopConsoleApp
                             tw.WriteLine(input + "," + input2);
                             tw.Close();
                             Console.WriteLine("Info saved");
+                            
                             Console.WriteLine("Hit enter to continue");
 
                         }
@@ -114,7 +116,9 @@ namespace ShopConsoleApp
                         Console.Read();
 
                         break;
-                    //This option current quiers the raw pasebin file I use for back currently owned Video Game List and prints it to the console. 
+                    //This option current quiers the raw pasebin file I use for back currently owned Video Game List and prints it to the console.
+                    //This reads data from an external source one of the optional requirements.
+
                     case 6:
                         
                         {
@@ -124,14 +128,18 @@ namespace ShopConsoleApp
                         {
                             WebClient client = new WebClient();
                             string reply = client.DownloadString(address);
+                            
                             Console.WriteLine(reply);
                             Console.WriteLine("Pretty Cool huh?");
+                            int numLines = address.Count(c => c.Equals("\r\n"));
+                            Console.WriteLine("There are " + numLines + " games in your collection");
                             Console.WriteLine("Press enter to continue.");
                             Console.ReadLine();
                         }
                         break;
 
-                    //This randomly selects a game from an external source
+                    //This randomly selects a game from an said external source
+                    //This retrieves a single value from a list that displays a random game from collection to play
 
                     case 7:
                         
@@ -146,7 +154,7 @@ namespace ShopConsoleApp
                             pwd = line[rnum].ToString();
                             Console.WriteLine(pwd);
                             Console.WriteLine("Press Enter to contine");
-                            
+
                         }
                         catch (Exception e)
                         {
@@ -166,7 +174,8 @@ namespace ShopConsoleApp
 
         }
 
-        //this interacts with Store.cs
+        //this interacts with Store.cs also uses Linq thought the following 3 code blocks
+        //User can add information and cost of a system and 'checkout' with final price - one of the optionl requirements.
 
         private static void printBackOrder(Store s)
         {
