@@ -17,13 +17,20 @@ namespace ShopConsoleApp
             //Main Menu
 
             Store s = new Store();
-            Console.WriteLine("Welcome to Darik's Video Game Library and Storefront! First input the video game Console you're selling. Fill out the correct system type and sale cost. Then checkout! Also add an item to your wishlist or acess your current collection from pastebin");
+            Console.WriteLine("*********************************************************************************");
+            Console.WriteLine("Welcome to Darik's Video Game Library and Storefront!");
+            Console.WriteLine("First input the video game Console you're selling.");
+            Console.WriteLine("Fill out the correct system type and sale cost. Then checkout!");
+            Console.WriteLine("Also add an item to your wishlist or acess your current collection from pastebin");
+            Console.WriteLine("*********************************************************************************");
+            Console.WriteLine("Main Menu");
+            Console.WriteLine("*********");
 
             int action = chooseAction();
 
             while (action != 9)
             {
-                Console.WriteLine("You chose " + action);
+                Console.WriteLine("Function " + action + " recieved good job!");
 
                 switch (action)
 
@@ -114,14 +121,10 @@ namespace ShopConsoleApp
                         {
                             WebClient client = new WebClient();
                             string reply = client.DownloadString(address);
-
                             Console.WriteLine(reply);
-
                             Console.WriteLine("Pretty Cool huh?");
                             Console.WriteLine("Press enter to continue.");
                             Console.ReadLine();
-
-                            
                         }
                         break;
 
@@ -132,17 +135,11 @@ namespace ShopConsoleApp
                         {
                             WebClient client = new WebClient();
                             string reply = client.DownloadString("https://pastebin.com/raw/Lzs7gJfc");
-                            
                             String pwd = null;
-
                             string[] line = reply.Split("\r\n");
-
                             Random rn = new Random();
-
                             int rnum = rn.Next(line.Length-1);
-
                             pwd = line[rnum].ToString();
-
                             Console.WriteLine(pwd);
                             Console.WriteLine("Press Enter to contine");
                             
@@ -202,14 +199,18 @@ namespace ShopConsoleApp
                 Console.WriteLine("Game # " + i + " " + s.GameList[i]);
             }
         }
-        //this is the interactive comman menu for the program. 
+        //this is the the interactive menu for the program. 
         static public int chooseAction()
         {
             int choice = 0;
-            Console.WriteLine("Enter (1) to add a System Manufactuer. Enter (2) to add System Type. Enter (3) to checkout. Enter (4) to view wishlist. Enter (5) to add game to file. Enter (6) to access outside collection file. Enter (9) to quit ");
-
-         
-
+            Console.WriteLine("Press (1) to add a System Manufactuer.");
+            Console.WriteLine("Press (2) to add System item to your cart.");
+            Console.WriteLine("Press (3) to checkout.");
+            Console.WriteLine("Press (4) to view wishlist.");
+            Console.WriteLine("Press (5) to add game to file.");
+            Console.WriteLine("Press (6) to access outside collection file");
+            Console.WriteLine("Press (7) to randomly suggest a video game to play");
+            Console.WriteLine("Press (9) to quit");
             choice = int.Parse(Console.ReadLine());
             return choice;
         }
