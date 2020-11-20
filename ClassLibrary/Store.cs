@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace ClassLibrary
 {
+    //this ads functionality to the Store and Cart fuction
     public class Store
     {
         public List<Cart> GameList { get; set; }

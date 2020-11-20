@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+//This handles how the Cart behaves and allows price input
+
 namespace ClassLibrary
 {
     public class Cart
