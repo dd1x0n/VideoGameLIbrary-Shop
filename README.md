@@ -12,8 +12,10 @@ Optional Requiremnts Used in Program:
 4.) "Read data from an external file, such as text, JSON, CSV, etc and use that data in your
 application" -  Program reads from two sourses, Patebin and wishlist.csv. 
 
-5.) "Create a call at least 3 functions or methods, at least one of which must return a value that is used in your application" - used in checkout stage of application.
+5.) Use a LINQ query to retrieve information from a data structure (such as a list or array) or file - Linq is used thought the project. 
 
-6.) "Analyze text and display information about it (ex: how many words in a paragraph)" - This is used to count the itmes in the wishlist fucntion. 
+6.) "Create a call at least 3 functions or methods, at least one of which must return a value that is used in your application" - used in checkout stage of application.
+
+7.) "Analyze text and display information about it (ex: how many words in a paragraph)" - This is used to count the items in the wishlist function. 
 
 WARNING: Two sets files outside of the main program are referenced so make sure that is implemented in your IDE. This was built with Visual Studio for Mac.
